@@ -73,14 +73,14 @@ public class OptimalBox implements SweetBox {
 
 	public void optimizeWeight(double weight) {
 		Collections.sort(sweets, new WeightComparatorDesc());
-		while (this.weight >= weight) {
+		while (this.weight > weight) {
 			delete();
 		}
 	}
 
-	public void optimizePrice(double price) {
+	public void optimizePrice(double weight) {
 		Collections.sort(sweets, new PriceComparatorDesc());
-		while (this.price >= price) {
+		while (this.weight > weight) {
 			delete();
 		}
 	}

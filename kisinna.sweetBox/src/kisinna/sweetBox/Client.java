@@ -9,7 +9,6 @@ import kisinna.sweetBox.box.OptimalBox;
 import kisinna.sweetBox.sweet.Sweet;
 
 public class Client {
-	private static final String PRICE_MSG = "Введите желаемую стоимость коробки";
 	private static final String OPTIMIZED_MSG = "Оптимизация завершена";
 	private static final String POSITIVE_NUMBER_MSG = "Введите положительное число";
 	private static final String WEIGHT_MSG = "Введите желаемый вес коробки";
@@ -118,7 +117,7 @@ public class Client {
 	}
 
 	private void optimizePrice() {
-		out.println(PRICE_MSG);
+		out.println(WEIGHT_MSG);
 		if (!in.hasNextDouble()) {
 			out.println(INCORRECT_DATA_MSG);
 			return;
