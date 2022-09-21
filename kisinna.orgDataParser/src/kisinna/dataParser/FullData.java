@@ -1,11 +1,11 @@
-package kisinna.orgDataParser;
+package kisinna.dataParser;
 
 import java.util.List;
 
-public class Companies {
+public class FullData {
  private List<Company> companies;
 
-public Companies(List<Company> companies) {
+public FullData(List<Company> companies) {
 	super();
 	this.companies = companies;
 }

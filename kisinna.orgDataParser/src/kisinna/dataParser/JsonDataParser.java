@@ -1,4 +1,4 @@
-package kisinna.orgDataParser;
+package kisinna.dataParser;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,16 +9,16 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 
-public class OrgDataParser {
+public class JsonDataParser {
 
 	public List<Company> getCompanyList(String path) throws FileNotFoundException {
 			
 			JsonReader reader = new JsonReader(new FileReader(Paths.get(path).toAbsolutePath().toFile()));
 			Gson gson = new GsonBuilder()
-	        .registerTypeAdapter(Companies.class, new CompaniesParser())
+	        .registerTypeAdapter(FullData.class, new FullDataConverter())
 	        .create();
 	     
-	    Companies companies = gson.fromJson(reader, Companies.class);
+	    FullData companies = gson.fromJson(reader, FullData.class);
 	    return companies.getCompanies();
 	}
 

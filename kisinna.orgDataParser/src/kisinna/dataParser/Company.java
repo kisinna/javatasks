@@ -1,4 +1,4 @@
-package kisinna.orgDataParser;
+package kisinna.dataParser;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -6,17 +6,19 @@ import java.util.List;
 public class Company {
  private Integer id;
  private String name;
+ private String address;
  private String phoneNumber;
  private String inn;
  private LocalDate founded;
- private List<?> securities;
+ private List<Security> securities;
 public Integer getId() {
 	return id;
 }
-public Company(Integer id, String name, String phoneNumber, String inn, LocalDate founded, List<?> securities) {
+public Company(Integer id, String name, String address, String phoneNumber, String inn, LocalDate founded, List<Security> securities) {
 	super();
 	this.id = id;
 	this.name = name;
+	this.address = address;
 	this.phoneNumber = phoneNumber;
 	this.inn = inn;
 	this.founded = founded;
@@ -49,11 +51,17 @@ public LocalDate getFounded() {
 public void setFounded(LocalDate founded) {
 	this.founded = founded;
 }
-public List<?> getSecurities() {
+public List<Security> getSecurities() {
 	return securities;
 }
-public void setSecurities(List<?> securities) {
+public void setSecurities(List<Security> securities) {
 	this.securities = securities;
+}
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
 }
  
 }
